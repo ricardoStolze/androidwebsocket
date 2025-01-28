@@ -11,7 +11,7 @@ pluginManagement {
         gradlePluginPortal()
     }
     plugins {
-        id("com.android.appliction") version "8.12.1" apply
+        id("com.android.application") version "8.12.1" apply
                 false
     }
 }

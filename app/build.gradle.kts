@@ -1,6 +1,9 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    //alias(libs.plugins.android.application)
+    //alias(libs.plugins.jetbrains.kotlin.android)
 }
 
 android {
@@ -37,7 +40,10 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
-        compose = true
+        //compose = true
+        viewBinding = true
+        //noinspection DataBindingWithoutKapt
+        //dataBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -59,6 +65,10 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.okio:okio:3.2.0")
+    implementation(libs.androidx.appcompat)
+    implementation ("com.google.android.material:material:1.0.0-beta01")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
